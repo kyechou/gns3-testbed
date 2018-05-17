@@ -9,7 +9,7 @@ and the configuration files in this repository.
 Using the pre-built OVA image
 -----------------------------
 
-Download the OVA image from [the
+Download the OVA image from [this
 link](https://drive.google.com/open?id=1b45on6LJ3cIncgQieHtOtbJceNP5xD-o) and
 then deploy the image template in VirtualBox or VMware. The image works better
 when given more than 8~9 GiB memory. Once you boot up the virtual machine, you
@@ -72,7 +72,7 @@ Then choose the downloaded project to import in `File` -> `Import portable
 project`.
 
 Finally, remember to reboot the system in order for the services to create and
-configure the interfaces.
+configure the interfaces, and the temporary project can be deleted now.
 
 
 Concerns & TODOs
@@ -82,10 +82,11 @@ Concerns & TODOs
 
 We've tried the images of Cisco 3640 and 7200, both of which don't seem to work
 well. The 3640 image, `c3640-ik9o3s-mz124-13.bin`, is unable to run SSH service
-after reboot in that it cannot restore the SSH key after reboot. SSH works well
-with the 7200 image, `c7200-advipservicesk9-mz.152-4.S5.bin`, but it cannot
-create VLANs since it is not an Ethernet switch. As a result, we use the Cisco
-3745 image, which works well with both SSH and VLAN.
+after rebooting the device in that it cannot restore the SSH key (actually some
+instances can, but most can not). SSH works well with the 7200 image,
+`c7200-advipservicesk9-mz.152-4.S5.bin`, but it cannot create VLANs since it is
+not an Ethernet switch. As a result, we use the Cisco 3745 image, which works
+well with both SSH and VLAN.
 
 Another issue for the 3745 image is mentioned in [the
 post](http://forum.gns3.net/topic2786.html). The switches cannot ping each other
